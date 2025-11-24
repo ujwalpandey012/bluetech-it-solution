@@ -361,3 +361,7 @@ body {
     box-shadow: 0 0 15px #00e5ff;
 }
 
+/*background img*/
+.some-section {
+    background: url('assets/css/img/ChatGPT Image Nov 24, 2025, 07_49_56 PM.png') no-repeat center center/cover;
+}
