@@ -3,15 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - BlueTech</title>
+    <title>Contact - BlueTech IT Solution</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
 
-<div class="navbar">
-    <div class="logo">BlueTech</div>
+<!-- PRELOADER -->
+<div id="preloader">
+    <div class="loader"></div>
+</div>
+
+<!-- NAVBAR -->
+<div class="navbar fade-in">
+    <img src="assets/img/logo.svg" class="logo-img">
     <div class="menu-btn" id="menuBtn">☰</div>
+
     <nav class="nav-links" id="navMenu">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
@@ -22,36 +29,57 @@
     </nav>
 </div>
 
-<section class="page-section">
+<!-- CONTACT SECTION -->
+<section class="page-section fade-in">
     <h1>Contact Us</h1>
+    <p>Have a project? Need a website? Reach out and we’ll get back to you shortly.</p>
 
     <div class="grid contact-grid">
-        <form action="https://formsubmit.co/your@email.com" method="POST">
-            <label>Your Name</label>
-            <input type="text" name="name" required>
 
-            <label>Email Address</label>
-            <input type="email" name="email" required>
+        <!-- CONTACT FORM -->
+        <form action="https://formsubmit.co/ujwalpandey012@gmail.com" method="POST">
+            
+            <!-- FormSubmit Settings -->
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
 
-            <label>Phone</label>
-            <input type="text" name="phone" required>
+            <label>Your Name *</label>
+            <input type="text" name="name" required placeholder="Enter your full name">
 
-            <label>Your Message</label>
-            <textarea name="message" rows="5" required></textarea>
+            <label>Your Email *</label>
+            <input type="email" name="email" required placeholder="Enter your email">
+
+            <label>Your Phone Number *</label>
+            <input type="text" name="phone" required placeholder="Enter your phone number">
+
+            <label>Your Address *</label>
+            <input type="text" name="address" required placeholder="Enter your address">
+
+            <label>Your Message *</label>
+            <textarea name="message" rows="5" required placeholder="Tell us about your project..."></textarea>
 
             <button type="submit">Send Message</button>
         </form>
 
+        <!-- BUSINESS INFO -->
         <div>
-            <h3>Our Information</h3>
-            <p>Email: info@bluetech.com</p>
-            <p>Location: Clayton, Melbourne</p>
+            <h3>Business Information</h3>
+            <p><strong>Email:</strong> ujwalpandey012@gmail.com</p>
+            <p><strong>ABN:</strong> 44736702194</p>
+            <p><strong>Phone:</strong> 0449 913 265</p>
+            <p><strong>Location:</strong> Unit 3, 4 Mary St, Clayton VIC 3168</p>
+            <p>We respond within 24–48 hours.</p>
         </div>
+
     </div>
 </section>
 
+<!-- FOOTER -->
 <footer class="footer">
-    <p>© 2025 BlueTech IT Solution • All Rights Reserved</p>
+    <p class="brand">BlueTech IT Solution</p>
+    <p>ABN: 44736702194 • Phone: 0449 913 265</p>
+    <p>Unit 3, 4 Mary St, Clayton VIC 3168</p>
+    <p>© 2025 BlueTech IT Solution — All Rights Reserved</p>
 </footer>
 
 <script src="assets/js/script.js" defer></script>
