@@ -5,72 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - BlueTech IT Solution</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/script.js" defer></script>
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
-    <header class="neon-nav">
-        <div class="logo">BlueTech IT Solution</div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="services.html">Services</a>
-            <a href="pricing.html">Pricing</a>
-            <a href="portfolio.html">Portfolio</a>
-            <a href="contact.html" class="active">Contact</a>
-        </nav>
-    </header>
+<header class="neon-nav">
+    <div class="logo">BlueTech</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html" class="active">Contact</a>
+    </nav>
+</header>
 
-    <!-- CONTACT SECTION -->
-    <section class="page-section">
-        <h1 class="section-title">Contact Us</h1>
-        <p class="section-text">Have a project? Need a website? Contact BlueTech IT Solution today.</p>
+<section class="page-section fade-in">
+    <h1 class="section-title">Contact Us</h1>
 
-        <div class="contact-container">
+    <div class="contact-container">
 
-            <!-- CONTACT FORM -->
-          <form action="https://formsubmit.co/ujwalpandey012@gmail.com" method="POST" class="contact-form">
+        <form action="https://formsubmit.co/ujwalpandey012@gmail.com" method="POST" class="contact-form">
 
-    <!-- FormSubmit Security -->
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
 
-    <!-- NAME -->
-    <label>Your Name *</label>
-    <input type="text" name="name" required placeholder="Enter your full name">
+            <label>Your Name *</label>
+            <input type="text" name="name" required>
 
-    <!-- EMAIL -->
-    <label>Your Email *</label>
-    <input type="email" name="email" required placeholder="Enter your email">
+            <label>Email Address *</label>
+            <input type="email" name="email" required>
 
-    <!-- PHONE -->
-    <label>Your Phone Number *</label>
-    <input type="text" name="phone" required placeholder="Enter your phone number">
+            <label>Phone Number *</label>
+            <input type="text" name="phone" required>
 
-    <!-- ADDRESS -->
-    <label>Your Address *</label>
-    <input type="text" name="address" required placeholder="Enter your address">
+            <label>Your Message *</label>
+            <textarea name="message" rows="6" required></textarea>
 
-    <!-- MESSAGE -->
-    <label>Your Message *</label>
-    <textarea name="message" rows="5" required placeholder="Tell us about your project..."></textarea>
+            <button type="submit" class="neon-button">Send Message</button>
+        </form>
 
-    <button type="submit" class="neon-button">Send Message</button>
-</form>
-
-
-            <!-- BUSINESS INFO -->
-            <div class="contact-info">
-                <h2 class="sub-title">Business Information</h2>
-                <p><b>Email:</b> ujwalpandey012@gmail.com</p>
-                <p><b>ABN:</b> 44736702194</p>
-                <p><b>Location:</b> Unit 3, 4 Mary St, Clayton VIC 3168</p>
-            </div>
-
+        <div class="contact-info fade-in">
+            <h2 class="sub-title">Business Information</h2>
+            <p><b>Email:</b> ujwalpandey012@gmail.com</p>
+            <p><b>ABN:</b> 44736702194</p>
+            <p><b>Location:</b> Clayton, Melbourne, VIC</p>
         </div>
-    </section>
+
+    </div>
+
+</section>
 
 </body>
 </html>
-
