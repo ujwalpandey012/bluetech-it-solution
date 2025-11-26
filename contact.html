@@ -3,16 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - BlueTech</title>
+    <title>Contact - BlueTech IT Solution</title>
+
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
 
-<div id="preloader"><div class="loader"></div></div>
+<!-- PRELOADER -->
+<div id="preloader">
+    <div class="wave-loader">
+        <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+        <div class="bar"></div><div class="bar"></div>
+    </div>
+</div>
 
+<!-- NAVBAR -->
 <header class="neon-navbar fade-in">
     <div class="nav-inner">
-        <img src="assets/img/logo.svg" class="logo-img">
+        <img src="assets/img/logo.svg" class="logo-img" alt="BlueTech Logo">
+
         <nav class="nav-links" id="navMenu">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
@@ -21,15 +31,24 @@
             <a href="portfolio.html">Portfolio</a>
             <a href="contact.html" class="active">Contact</a>
         </nav>
+
         <div class="menu-btn" id="menuBtn">☰</div>
     </div>
 </header>
 
-<section class="page-section" style="padding-top:180px;">
+
+<!-- CONTACT PAGE SECTION -->
+<section class="page-section fade-in">
+
     <h1>Contact Us</h1>
+    <p>
+        Have a project in mind? Need a website, branding, or IT support?  
+        Send us a message — we respond quickly.
+    </p>
 
     <div class="grid contact-grid">
 
+        <!-- CONTACT FORM -->
         <form action="https://formsubmit.co/ujwalpandey012@gmail.com" method="POST">
             <input type="hidden" name="_captcha" value="false">
             <input type="hidden" name="_template" value="table">
@@ -47,28 +66,36 @@
             <input type="text" name="address" required>
 
             <label>Your Message *</label>
-            <textarea name="message" rows="5" required></textarea>
+            <textarea name="message" rows="6" required></textarea>
 
             <button type="submit">Send Message</button>
         </form>
 
-        <div>
-            <h3>Business Information</h3>
+        <!-- BUSINESS INFO -->
+        <div class="card" style="text-align:left;">
+            <h2>Business Information</h2>
             <p><strong>Email:</strong> ujwalpandey012@gmail.com</p>
-            <p><strong>ABN:</strong> 44736702194</p>
             <p><strong>Phone:</strong> 0449 913 265</p>
-            <p><strong>Location:</strong> Unit 3, 4 Mary St, Clayton VIC</p>
+            <p><strong>ABN:</strong> 44736702194</p>
+            <p><strong>Address:</strong><br>Unit 3, 4 Mary St<br>Clayton VIC 3168</p>
+            <br>
+            <h2>Office Hours</h2>
+            <p>Monday – Saturday<br>10:00 AM – 6:00 PM</p>
         </div>
 
     </div>
+
 </section>
 
-<footer class="footer">
+
+<!-- FOOTER -->
+<footer class="footer fade-in">
     <p class="brand">BlueTech IT Solution</p>
     <p>ABN: 44736702194</p>
     <p>0449 913 265 • Clayton VIC 3168</p>
-    <p>© 2025 BlueTech IT Solution</p>
+    <p>© 2025 BlueTech IT Solution — All Rights Reserved</p>
 </footer>
+
 
 <script src="assets/js/script.js"></script>
 </body>
