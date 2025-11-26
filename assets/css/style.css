@@ -12,7 +12,7 @@ body {
 }
 
 /* ===========================
-   LOADING SCREEN
+   PRELOADER
 =========================== */
 #preloader {
     position: fixed;
@@ -34,116 +34,128 @@ body {
     border-radius: 50%;
     animation: spin 1s infinite linear;
 }
+
 @keyframes spin { 100% { transform: rotate(360deg); } }
 
 /* ===========================
-   NAVBAR
+   NEON OUTLINE NAVBAR
 =========================== */
-.navbar {
+.neon-navbar {
     width: 100%;
-    padding: 14px 40px;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    position: fixed;
+    z-index: 999;
+}
+
+.nav-inner {
+    width: 92%;
+    max-width: 1250px;
+    padding: 18px 35px;
+    background: rgba(0, 15, 32, 0.65);
+    border: 2px solid #00aaff;
+    border-radius: 18px;
+    backdrop-filter: blur(12px);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #ffffffcc;
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid #e6e6e6;
-    position: fixed;
-    top: 0; left: 0;
-    z-index: 900;
+    box-shadow: 0 0 25px #009dff;
 }
 
-.logo-img { height: 40px; }
-
-.menu-btn {
-    font-size: 30px;
-    display: none;
-    cursor: pointer;
-}
-
-.nav-links {
-    display: flex;
-    gap: 30px;
+.logo-img {
+    height: 38px;
+    filter: drop-shadow(0 0 5px #00c8ff);
 }
 
 .nav-links a {
+    color: #e8f7ff;
+    margin-left: 28px;
     text-decoration: none;
     font-size: 16px;
-    color: #333;
-    transition: 0.25s;
+    transition: 0.25s ease-in-out;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: #3aa9ff;
+    color: #6cd8ff;
+    text-shadow: 0 0 12px #00c8ff;
 }
 
-/* MOBILE */
-@media(max-width:850px){
-    .menu-btn { display: block; }
-
-    .nav-links {
-        position: fixed;
-        top: 72px;
-        right: -100%;
-        width: 240px;
-        height: 100vh;
-        background: #fff;
-        flex-direction: column;
-        padding: 30px;
-        gap: 20px;
-        transition: 0.3s;
-        border-left: 1px solid #ddd;
-    }
-
-    .nav-links.open { right: 0; }
-}
-
-/* ===========================
-   MOVING GRADIENT HERO
-=========================== */
-.hero {
-    padding: 200px 40px 160px;
-    text-align: center;
-    background: linear-gradient(120deg,#3aa9ff,#6dc7ff,#9edcff);
-    background-size: 300% 300%;
-    animation: gradientMove 8s ease infinite;
+.menu-btn {
+    display: none;
+    font-size: 34px;
+    cursor: pointer;
     color: white;
 }
 
-@keyframes gradientMove {
+@media(max-width:850px){
+    .menu-btn{display: block;}
+
+    .nav-links{
+        position: fixed;
+        top: 90px;
+        right: -100%;
+        width: 220px;
+        height: 100vh;
+        background: rgba(0, 20, 40, 0.92);
+        padding: 30px;
+        border-left: 2px solid #0088ff;
+        backdrop-filter: blur(10px);
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        transition: .35s;
+    }
+
+    .nav-links.open{ right: 0; }
+}
+
+/* ===========================
+   HERO WAVE GRADIENT
+=========================== */
+.hero-wave {
+    padding-top: 220px;
+    padding-bottom: 180px;
+    color: #ffffff;
+    text-align: center;
+    background: linear-gradient(135deg, #032b52, #063a6d, #085896, #0a6dc7, #0095ff);
+    background-size: 200% 200%;
+    animation: waveMove 12s ease-in-out infinite;
+}
+
+@keyframes waveMove {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-.hero h1 {
-    font-size: 50px;
+.hero-wave h1 {
+    font-size: 52px;
     font-weight: 700;
-    margin-bottom: 18px;
+    margin-bottom: 22px;
 }
 
-.hero p {
+.hero-wave p {
+    max-width: 680px;
+    margin: 0 auto 40px;
     font-size: 18px;
-    max-width: 750px;
-    margin: auto;
-    margin-bottom: 35px;
+    opacity: 0.95;
 }
 
-/* BUTTON */
-.btn {
-    padding: 12px 30px;
-    background: #ffffff;
-    color: #0b3c60;
-    font-weight: 600;
-    border-radius: 8px;
+.btn-primary {
+    padding: 14px 36px;
+    background: linear-gradient(90deg, #1fb6ff, #45d1ff);
+    color: #003150;
+    border-radius: 10px;
     text-decoration: none;
-    transition: 0.3s ease;
+    font-weight: 600;
+    transition: .3s;
 }
 
-.btn:hover {
-    background: #e7f4ff;
-    transform: translateY(-3px);
+.btn-primary:hover {
+    transform: translateY(-4px);
+    background: linear-gradient(90deg, #45d1ff, #1fb6ff);
 }
 
 /* ===========================
@@ -155,24 +167,8 @@ body {
     margin: auto;
 }
 
-.page-section h1 {
-    font-size: 35px;
-    margin-bottom: 20px;
-}
-
-.page-section p {
-    font-size: 17px;
-    margin-bottom: 15px;
-}
-
 /* ===========================
-   ANIMATIONS
-=========================== */
-.fade-in { animation: fadeIn 1.3s ease forwards; opacity: 0; }
-@keyframes fadeIn { to { opacity: 1; } }
-
-/* ===========================
-   CARDS + GRIDS
+   GRIDS + CARDS
 =========================== */
 .grid {
     display: grid;
@@ -181,10 +177,11 @@ body {
 
 .card {
     padding: 25px;
-    border: 1px solid #e6e6e6;
     border-radius: 12px;
-    background: #fff;
-    transition: 0.3s;
+    background: white;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 5px 20px rgba(0,0,0,.06);
+    transition: .3s;
 }
 
 .card:hover {
@@ -193,22 +190,17 @@ body {
 }
 
 /* ===========================
-   PORTFOLIO WITH IMAGES
+   PORTFOLIO
 =========================== */
 .portfolio-grid {
-    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 .port-card {
-    background: #ffffff;
     border-radius: 14px;
     overflow: hidden;
-    box-shadow: 0 4px 18px rgba(0,0,0,0.07);
-    transition: 0.3s;
-}
-
-.port-card:hover {
-    transform: translateY(-6px);
+    background: white;
+    box-shadow: 0 4px 18px rgba(0,0,0,.07);
 }
 
 .port-card img {
@@ -226,28 +218,23 @@ body {
    CONTACT FORM
 =========================== */
 .contact-grid {
-    grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 }
 
 form input, form textarea {
     width: 100%;
     padding: 12px;
-    border: 1px solid #ccc;
     border-radius: 6px;
+    border: 1px solid #ccc;
     margin-bottom: 15px;
 }
 
 form button {
     padding: 12px 20px;
     background: #3aa9ff;
-    color: #fff;
     border: none;
+    color: white;
     border-radius: 6px;
-    cursor: pointer;
-}
-
-form button:hover {
-    background: #1c8be0;
 }
 
 /* ===========================
@@ -258,12 +245,4 @@ form button:hover {
     padding: 45px 20px;
     background: #f5f7fa;
     text-align: center;
-    line-height: 1.8;
 }
-
-.footer .brand {
-    font-size: 20px;
-    font-weight: 600;
-    color: #3aa9ff;
-}
-
