@@ -1,66 +1,104 @@
-/* GOOGLE FONT */
+/* ----------------------------------------------------
+   GOOGLE FONT
+---------------------------------------------------- */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-/* RESET */
+/* ----------------------------------------------------
+   RESET
+---------------------------------------------------- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: #ffffff;
-    color: #1a1a1a;
     overflow-x: hidden;
+    color: #ffffff;
+    background: #021526;
 }
 
-/* ===========================
-   PRELOADER
-=========================== */
+/* ----------------------------------------------------
+   ANIMATED WAVE BACKGROUND (ALL PAGES)
+---------------------------------------------------- */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(135deg, #00111f, #003366, #0055aa, #0077ff);
+    background-size: 300% 300%;
+    animation: waveBG 14s ease-in-out infinite;
+    z-index: -2;
+}
+
+@keyframes waveBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ----------------------------------------------------
+   WAVE PRELOADER (OPTION 3)
+---------------------------------------------------- */
 #preloader {
     position: fixed;
-    width: 100%;
-    height: 100%;
-    background: #ffffff;
-    top: 0; left: 0;
-    z-index: 99999;
+    width: 100%; height: 100%;
+    background: #021526;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    z-index: 99999;
 }
 
-.loader {
-    width: 55px;
-    height: 55px;
-    border: 5px solid #d9efff;
-    border-top-color: #3aa9ff;
-    border-radius: 50%;
-    animation: spin 1s infinite linear;
+.wave-loader {
+    width: 140px;
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
 }
 
-@keyframes spin { 100% { transform: rotate(360deg); } }
+.wave-loader .bar {
+    width: 12px;
+    height: 100%;
+    background: #4cc3ff;
+    border-radius: 6px;
+    animation: wave 1.2s infinite ease-in-out;
+}
 
-/* ===========================
-   NEON OUTLINE NAVBAR
-=========================== */
+.wave-loader .bar:nth-child(1){ animation-delay: -1.1s; }
+.wave-loader .bar:nth-child(2){ animation-delay: -1.0s; }
+.wave-loader .bar:nth-child(3){ animation-delay: -0.9s; }
+.wave-loader .bar:nth-child(4){ animation-delay: -0.8s; }
+.wave-loader .bar:nth-child(5){ animation-delay: -0.7s; }
+
+@keyframes wave {
+    0%, 40%, 100% { transform: scaleY(0.4); }
+    20% { transform: scaleY(1); }
+}
+
+/* ----------------------------------------------------
+   NEON NAVBAR (EXACT LIKE SCREENSHOT)
+---------------------------------------------------- */
 .neon-navbar {
     width: 100%;
     display: flex;
     justify-content: center;
-    padding-top: 20px;
     position: fixed;
-    z-index: 999;
+    top: 20px;
+    z-index: 9999;
 }
 
 .nav-inner {
     width: 92%;
     max-width: 1250px;
     padding: 18px 35px;
-    background: rgba(0, 15, 32, 0.65);
-    border: 2px solid #00aaff;
     border-radius: 18px;
+    background: rgba(0, 15, 32, 0.55);
+    border: 2px solid #4cc3ff;
+    box-shadow: 0 0 20px #009dff;
     backdrop-filter: blur(12px);
+
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    box-shadow: 0 0 25px #009dff;
+    justify-content: space-between;
 }
 
 .logo-img {
@@ -69,19 +107,20 @@ body {
 }
 
 .nav-links a {
-    color: #e8f7ff;
-    margin-left: 28px;
+    margin-left: 26px;
     text-decoration: none;
+    color: #e6f7ff;
     font-size: 16px;
-    transition: 0.25s ease-in-out;
+    transition: 0.25s ease;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: #6cd8ff;
-    text-shadow: 0 0 12px #00c8ff;
+    color: #78d6ff;
+    text-shadow: 0 0 12px #4cc3ff;
 }
 
+/* MOBILE MENU BUTTON */
 .menu-btn {
     display: none;
     font-size: 34px;
@@ -89,109 +128,106 @@ body {
     color: white;
 }
 
+/* MOBILE MENU */
 @media(max-width:850px){
-    .menu-btn{display: block;}
+    .menu-btn{ display: block; }
 
     .nav-links{
         position: fixed;
-        top: 90px;
+        top: 100px;
         right: -100%;
-        width: 220px;
+        width: 240px;
         height: 100vh;
-        background: rgba(0, 20, 40, 0.92);
-        padding: 30px;
-        border-left: 2px solid #0088ff;
-        backdrop-filter: blur(10px);
+        background: rgba(0, 25, 50, 0.95);
+        padding: 25px;
+        backdrop-filter: blur(12px);
+        border-left: 2px solid #4cc3ff;
         display: flex;
         flex-direction: column;
-        gap: 20px;
-        transition: .35s;
+        gap: 22px;
+        transition: 0.35s ease;
     }
 
-    .nav-links.open{ right: 0; }
+    .nav-links.open { right: 0; }
 }
 
-/* ===========================
-   HERO WAVE GRADIENT
-=========================== */
-.hero-wave {
-    padding-top: 220px;
-    padding-bottom: 180px;
-    color: #ffffff;
+/* ----------------------------------------------------
+   UNIVERSAL PAGE SECTION LAYOUT
+---------------------------------------------------- */
+.page-section {
+    max-width: 1200px;
+    padding: 200px 40px 100px;
+    margin: auto;
     text-align: center;
-    background: linear-gradient(135deg, #032b52, #063a6d, #085896, #0a6dc7, #0095ff);
-    background-size: 200% 200%;
-    animation: waveMove 12s ease-in-out infinite;
 }
 
-@keyframes waveMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-.hero-wave h1 {
-    font-size: 52px;
+/* ----------------------------------------------------
+   HEADINGS / TEXT
+---------------------------------------------------- */
+h1 {
+    font-size: 48px;
     font-weight: 700;
-    margin-bottom: 22px;
+    margin-bottom: 18px;
 }
 
-.hero-wave p {
-    max-width: 680px;
-    margin: 0 auto 40px;
-    font-size: 18px;
-    opacity: 0.95;
+h2 {
+    font-size: 32px;
+    margin-top: 40px;
+    margin-bottom: 14px;
 }
 
+p {
+    font-size: 17px;
+    line-height: 1.7;
+    opacity: 0.92;
+    max-width: 780px;
+    margin: 0 auto 25px;
+}
+
+/* ----------------------------------------------------
+   BUTTONS
+---------------------------------------------------- */
 .btn-primary {
-    padding: 14px 36px;
-    background: linear-gradient(90deg, #1fb6ff, #45d1ff);
-    color: #003150;
-    border-radius: 10px;
+    padding: 14px 40px;
+    background: linear-gradient(90deg, #2dbdff, #66d4ff);
+    color: #002b48;
     text-decoration: none;
+    border-radius: 10px;
     font-weight: 600;
-    transition: .3s;
+    transition: 0.3s;
 }
 
 .btn-primary:hover {
     transform: translateY(-4px);
-    background: linear-gradient(90deg, #45d1ff, #1fb6ff);
+    background: linear-gradient(90deg, #66d4ff, #2dbdff);
 }
 
-/* ===========================
-   PAGE SECTIONS
-=========================== */
-.page-section {
-    padding: 120px 40px 70px;
-    max-width: 1100px;
-    margin: auto;
-}
-
-/* ===========================
-   GRIDS + CARDS
-=========================== */
+/* ----------------------------------------------------
+   CARDS + GRIDS
+---------------------------------------------------- */
 .grid {
     display: grid;
-    gap: 25px;
+    gap: 28px;
+    margin-top: 40px;
 }
 
 .card {
     padding: 25px;
-    border-radius: 12px;
-    background: white;
-    border: 1px solid #e5e5e5;
-    box-shadow: 0 5px 20px rgba(0,0,0,.06);
-    transition: .3s;
+    border-radius: 14px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid #4cc3ff;
+    backdrop-filter: blur(6px);
+    transition: 0.35s ease;
 }
 
 .card:hover {
-    border-color: #3aa9ff;
-    transform: translateY(-4px);
+    transform: translateY(-6px);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.25);
 }
 
-/* ===========================
+/* ----------------------------------------------------
    PORTFOLIO
-=========================== */
+---------------------------------------------------- */
 .portfolio-grid {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
@@ -199,50 +235,76 @@ body {
 .port-card {
     border-radius: 14px;
     overflow: hidden;
-    background: white;
-    box-shadow: 0 4px 18px rgba(0,0,0,.07);
+    border: 1px solid #4cc3ff;
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(4px);
 }
 
 .port-card img {
     width: 100%;
-    height: 200px;
+    height: 210px;
     object-fit: cover;
 }
 
 .port-card h3 {
-    padding: 15px 20px;
-    font-size: 19px;
+    padding: 16px 20px;
+    font-size: 20px;
+    color: #bfeaff;
 }
 
-/* ===========================
+/* ----------------------------------------------------
    CONTACT FORM
-=========================== */
-.contact-grid {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-}
-
-form input, form textarea {
+---------------------------------------------------- */
+form input,
+form textarea {
     width: 100%;
     padding: 12px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
+    border-radius: 8px;
+    border: 1px solid #78d6ff;
     margin-bottom: 15px;
+    background: rgba(255,255,255,0.09);
+    color: white;
 }
 
 form button {
-    padding: 12px 20px;
-    background: #3aa9ff;
+    padding: 14px 32px;
+    background: #4cc3ff;
     border: none;
-    color: white;
-    border-radius: 6px;
+    color: #002b48;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
 }
 
-/* ===========================
+/* ----------------------------------------------------
    FOOTER
-=========================== */
+---------------------------------------------------- */
 .footer {
-    margin-top: 100px;
-    padding: 45px 20px;
-    background: #f5f7fa;
+    margin-top: 80px;
+    padding: 50px 20px;
     text-align: center;
+    background: rgba(0,0,0,0.25);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid #4cc3ff;
+}
+
+.footer p {
+    margin-bottom: 6px;
+    color: #c7ecff;
+}
+
+/* ----------------------------------------------------
+   FADE-IN ANIMATION
+---------------------------------------------------- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInMove 1.2s forwards;
+}
+
+@keyframes fadeInMove {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
