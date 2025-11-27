@@ -13,12 +13,8 @@ body {
     overflow-x: hidden;
     color: #ffffff;
     position: relative;
-}
 
-/* ----------------------------------------------------
-   PREMIUM BLUE-TECH BACKGROUND (Screenshot Accurate)
----------------------------------------------------- */
-body {
+    /* MAIN SCREENSHOT GRADIENT */
     background: linear-gradient(180deg,
         #011426 0%,
         #003468 40%,
@@ -26,53 +22,39 @@ body {
         #0090ff 100%
     );
     background-attachment: fixed;
-    background-size: cover;
 }
 
-/* WAVE LAYER */
+/* ----------------------------------------------------
+   EXACT SCREENSHOT WAVE LAYER  (Stable, No Animation)
+---------------------------------------------------- */
 body::before {
     content: "";
     position: fixed;
-    inset: 0;
-    background: radial-gradient(circle at 50% 80%,
-        rgba(0, 150, 255, 0.35),
-        rgba(0, 100, 200, 0.28) 20%,
-        rgba(0, 70, 150, 0.20) 55%,
-        rgba(0, 40, 90, 0.12) 75%,
-        transparent 100%
-    );
-    filter: blur(55px);
-    animation: moveWave 14s ease-in-out infinite;
-    z-index: -2;
-}
-
-@keyframes moveWave {
-    0%   { transform: translateY(0px) scale(1); }
-    50%  { transform: translateY(-30px) scale(1.07); }
-    100% { transform: translateY(0px) scale(1); }
-}
-
-/* FLOATING PARTICLES */
-#particles {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     z-index: -1;
-}
 
-.particle {
-    position: absolute;
-    width: 4px;
-    height: 4px;
-    background: rgba(120, 220, 255, 0.9);
-    border-radius: 50%;
-    box-shadow: 0 0 10px #78dfff;
-    animation: floatParticle linear infinite;
-}
+    background:
+        /* Main bottom wave curve */
+        radial-gradient(ellipse at bottom,
+            rgba(0, 150, 255, 0.55) 0%,
+            rgba(0, 110, 220, 0.45) 25%,
+            rgba(0, 80, 170, 0.40) 55%,
+            rgba(0, 40, 90, 0.38) 75%,
+            transparent 90%
+        ),
 
-@keyframes floatParticle {
-    0% { transform: translateY(0px) scale(1); opacity: 0.9; }
-    100% { transform: translateY(-120vh) scale(0.4); opacity: 0; }
+        /* Smooth top overlay */
+        linear-gradient(
+            180deg,
+            transparent 0%,
+            rgba(0, 70, 140, 0.25) 40%,
+            rgba(0, 130, 255, 0.35) 100%
+        );
+
+    filter: blur(65px);
 }
 
 /* ----------------------------------------------------
@@ -115,7 +97,7 @@ body::before {
 }
 
 /* ----------------------------------------------------
-   NEON NAVBAR
+   NAVBAR
 ---------------------------------------------------- */
 .neon-navbar {
     width: 100%;
@@ -149,12 +131,12 @@ body::before {
     border: 2px solid #4cc3ff;
     box-shadow: 0 0 12px #4cc3ff;
     background: #00263e;
-    transition: 0.25s;
+    transition: 0.2s ease;
 }
 
 .logo-img:hover {
     transform: scale(1.08);
-    box-shadow: 0 0 18px #66dfff;
+    box-shadow: 0 0 20px #66dfff;
 }
 
 .nav-links a {
@@ -233,9 +215,7 @@ p {
     margin: 0 auto 25px;
 }
 
-/* ----------------------------------------------------
-   BUTTONS
----------------------------------------------------- */
+/* BUTTON */
 .btn-primary {
     padding: 14px 40px;
     background: linear-gradient(90deg, #2dbdff, #66d4ff);
@@ -252,7 +232,7 @@ p {
 }
 
 /* ----------------------------------------------------
-   GRID / CARDS
+   GRID + CARDS
 ---------------------------------------------------- */
 .grid {
     display: grid;
@@ -275,7 +255,7 @@ p {
 }
 
 /* ----------------------------------------------------
-   PORTFOLIO CARDS
+   PORTFOLIO
 ---------------------------------------------------- */
 .portfolio-grid {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -346,7 +326,7 @@ form textarea {
 }
 
 /* ----------------------------------------------------
-   FADE-IN
+   FADE ANIMATION
 ---------------------------------------------------- */
 .fade-in {
     opacity: 0;
