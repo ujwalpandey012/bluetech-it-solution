@@ -102,8 +102,8 @@ body::before {
 }
 
 .logo-img {
-    width: 60px;             
-    height: 60px;             
+    width: 85px;             
+    height: 85px;             
     border-radius: 50%;       
     object-fit: cover;        
     border: 2px solid #4cc3ff; 
